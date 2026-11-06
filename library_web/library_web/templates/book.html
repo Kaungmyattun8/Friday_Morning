@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ book.title }}</h1>
+<p class="text-secondary">by {{ book.author }} · {{ book.year }}</p>
+<div class="d-flex gap-2">
+    <a class="btn btn-outline-primary" href="/books/{{ book.id }}/edit">Edit</a>
+    <form method="post" action="/books/{{ book.id }}/delete" onsubmit="return confirm('Delete this book?')">
+        <button class="btn btn-danger" type="submit">Delete</button>
+    </form>
+    <a class="btn btn-link" href="/books">Back</a>
+</div>
+{% endblock %}

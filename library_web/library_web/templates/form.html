@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ heading }}</h1>
+<form method="post" class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input class="form-control" name="title" value="{{ book.title }}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Author</label>
+        <input class="form-control" name="author" value="{{ book.author }}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Year</label>
+        <input class="form-control" name="year" value="{{ book.year }}">
+    </div>
+    <button class="btn btn-primary" type="submit">Save</button>
+    <a class="btn btn-link" href="/books">Cancel</a>
+</form>
+{% endblock %}
